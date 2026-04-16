@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bwdn1xip0yve0"]
+
+[ext_resource type="Script" uid="uid://d338x7ejyo5tq" path="res://assets/scripts/gun_turret.gd" id="1_xt8j5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xt8j5"]
+top_radius = 0.65
+bottom_radius = 0.75
+height = 0.25
+
+[sub_resource type="BoxMesh" id="BoxMesh_xt8j5"]
+size = Vector3(1, 0.4, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_brovr"]
+size = Vector3(2, 0.125, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xt8j5"]
+transparency = 1
+albedo_color = Color(0.5019608, 1, 1, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pe7gp"]
+material = SubResource("StandardMaterial3D_xt8j5")
+size = Vector3(0.05, 0.05, 1000)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3w6d8"]
+size = Vector3(0.15, 0.15, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f6a5g"]
+size = Vector3(0.15, 0.15, 2)
+
+[node name="GunTurret" type="Node3D" unique_id=1307237613 node_paths=PackedStringArray("turret_joint", "barrel_joints")]
+script = ExtResource("1_xt8j5")
+turret_joint = NodePath("TurretPivot")
+barrel_joints = [NodePath("TurretPivot/BarrelSight"), NodePath("TurretPivot/BarrelPivot1"), NodePath("TurretPivot/BarrelPivot2")]
+yaw_speed = 1.0471975511965976
+pitch_speed = 1.0471975511965976
+
+[node name="TurretBottomMesh" type="MeshInstance3D" parent="." unique_id=1952710706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+mesh = SubResource("CylinderMesh_xt8j5")
+
+[node name="TurretPivot" type="Node3D" parent="." unique_id=1816233997]
+
+[node name="TurretMidMesh" type="MeshInstance3D" parent="TurretPivot" unique_id=978189943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("BoxMesh_xt8j5")
+
+[node name="TurretTopMesh" type="MeshInstance3D" parent="TurretPivot" unique_id=1065406661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7122, 0.6)
+mesh = SubResource("BoxMesh_brovr")
+
+[node name="BarrelSight" type="Node3D" parent="TurretPivot" unique_id=1136505032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.75)
+
+[node name="DebugLineMesh" type="MeshInstance3D" parent="TurretPivot/BarrelSight" unique_id=1247836473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
+mesh = SubResource("BoxMesh_pe7gp")
+
+[node name="BarrelPivot1" type="Node3D" parent="TurretPivot" unique_id=1281331642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.5, -0.75)
+
+[node name="BarrelMesh" type="MeshInstance3D" parent="TurretPivot/BarrelPivot1" unique_id=602608560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
+mesh = SubResource("BoxMesh_3w6d8")
+
+[node name="Muzzle1" type="Node3D" parent="TurretPivot/BarrelPivot1" unique_id=554990270]
+
+[node name="BarrelPivot2" type="Node3D" parent="TurretPivot" unique_id=836902312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.5, -0.75)
+
+[node name="BarrelMesh" type="MeshInstance3D" parent="TurretPivot/BarrelPivot2" unique_id=16560937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
+mesh = SubResource("BoxMesh_f6a5g")
+
+[node name="Muzzle2" type="Node3D" parent="TurretPivot/BarrelPivot2" unique_id=1224407483]

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://u4lmhb8bujh7"]
+
+[ext_resource type="Script" uid="uid://cw4she0rbnvod" path="res://assets/scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bwdn1xip0yve0" path="res://assets/scenes/gun_turret.tscn" id="1_o5qli"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+transparency = 1
+albedo_color = Color(0.5019608, 1, 1, 0.4)
+
+[sub_resource type="SphereMesh" id="SphereMesh_sugp2"]
+material = SubResource("StandardMaterial3D_0wfyh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
+transparency = 1
+albedo_color = Color(0.5019608, 1, 1, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
+material = SubResource("StandardMaterial3D_sugp2")
+size = Vector3(4, 4, 4)
+
+[node name="Main" type="Node3D" unique_id=567508588 node_paths=PackedStringArray("target_node", "moving_node", "gun_turrets")]
+script = ExtResource("1_0wfyh")
+enable_moving_node_position = true
+enable_moving_node_rotation = true
+target_node = NodePath("TargetNode")
+moving_node = NodePath("TestCube")
+gun_turrets = [NodePath("GunTurretOrigin"), NodePath("TestCube/GunTurretLeft"), NodePath("TestCube/GunTurretRight"), NodePath("TestCube/GunTurretFront"), NodePath("TestCube/GunTurretBack"), NodePath("TestCube/GunTurretTop"), NodePath("TestCube/GunTurretBottom")]
+
+[node name="TargetNode" type="Node3D" parent="." unique_id=2138617404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -10)
+
+[node name="DebugSphereMesh" type="MeshInstance3D" parent="TargetNode" unique_id=746651592]
+mesh = SubResource("SphereMesh_sugp2")
+
+[node name="GunTurretOrigin" parent="." unique_id=1307237613 instance=ExtResource("1_o5qli")]
+
+[node name="TestCube" type="Node3D" parent="." unique_id=1209037035]
+transform = Transform3D(-0.3042572, 0.48334554, 0.8209943, 0.82099587, -0.30425933, 0.4833444, 0.48334315, 0.8209961, -0.30425772, 2.0794828, 0, 99.97838)
+
+[node name="DebugCubeMesh" type="MeshInstance3D" parent="TestCube" unique_id=44118553]
+mesh = SubResource("BoxMesh_0wfyh")
+
+[node name="GunTurretLeft" parent="TestCube" unique_id=203625255 instance=ExtResource("1_o5qli")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2, 0, 0)
+yaw_speed = 188.496
+pitch_speed = 188.496
+
+[node name="GunTurretRight" parent="TestCube" unique_id=211805448 instance=ExtResource("1_o5qli")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 2, 0, 0)
+yaw_speed = 188.496
+pitch_speed = 188.496
+
+[node name="GunTurretFront" parent="TestCube" unique_id=1499281913 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -2)
+yaw_speed = 188.496
+pitch_speed = 188.496
+
+[node name="GunTurretBack" parent="TestCube" unique_id=1444006271 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 2)
+yaw_speed = 188.496
+pitch_speed = 188.496
+
+[node name="GunTurretTop" parent="TestCube" unique_id=2743976 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+yaw_speed = 188.496
+pitch_speed = 188.496
+
+[node name="GunTurretBottom" parent="TestCube" unique_id=411290078 instance=ExtResource("1_o5qli")]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, -2, 0)
+yaw_speed = 188.496
+pitch_speed = 188.496
