@@ -33,6 +33,8 @@ func _physics_process(_delta: float) -> void:
 		
 		if (enable_moving_node_rotation):
 			moving_node.rotate(Vector3.ONE.normalized(), deg_to_rad(1.0))
+		
+		moving_node.scale = Vector3.ONE
 	
 	for gun_turret in gun_turrets:
 		if (not gun_turret):

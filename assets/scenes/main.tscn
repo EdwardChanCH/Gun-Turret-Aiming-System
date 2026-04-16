@@ -27,7 +27,7 @@ moving_node = NodePath("TestCube")
 gun_turrets = [NodePath("GunTurretOrigin"), NodePath("TestCube/GunTurretLeft"), NodePath("TestCube/GunTurretRight"), NodePath("TestCube/GunTurretFront"), NodePath("TestCube/GunTurretBack"), NodePath("TestCube/GunTurretTop"), NodePath("TestCube/GunTurretBottom")]
 
 [node name="TargetNode" type="Node3D" parent="." unique_id=2138617404]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 10, -50)
 
 [node name="DebugSphereMesh" type="MeshInstance3D" parent="TargetNode" unique_id=746651592]
 mesh = SubResource("SphereMesh_sugp2")
@@ -35,7 +35,7 @@ mesh = SubResource("SphereMesh_sugp2")
 [node name="GunTurretOrigin" parent="." unique_id=1307237613 instance=ExtResource("1_o5qli")]
 
 [node name="TestCube" type="Node3D" parent="." unique_id=1209037035]
-transform = Transform3D(-0.3042572, 0.48334554, 0.8209943, 0.82099587, -0.30425933, 0.4833444, 0.48334315, 0.8209961, -0.30425772, 2.0794828, 0, 99.97838)
+transform = Transform3D(0.9653888, 0.23872408, 0.10504896, -0.26080284, 0.8796886, 0.3976554, 0.002519548, -0.41128913, 0.91150147, -11.227782, 0, 99.36768)
 
 [node name="DebugCubeMesh" type="MeshInstance3D" parent="TestCube" unique_id=44118553]
 mesh = SubResource("BoxMesh_0wfyh")

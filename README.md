@@ -1,3 +1,6 @@
+# Gun Turret Aiming System
+![Thumbnail](_thumbnail.jpg)
+
 ## 0. Copyright
 
 * Edward Chan
