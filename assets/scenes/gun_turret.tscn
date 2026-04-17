@@ -63,6 +63,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 mesh = SubResource("BoxMesh_3w6d8")
 
 [node name="Muzzle1" type="Node3D" parent="TurretPivot/BarrelPivot1" unique_id=554990270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.9)
 
 [node name="BarrelPivot2" type="Node3D" parent="TurretPivot" unique_id=836902312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.5, -0.75)
@@ -72,3 +73,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 mesh = SubResource("BoxMesh_f6a5g")
 
 [node name="Muzzle2" type="Node3D" parent="TurretPivot/BarrelPivot2" unique_id=1224407483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.9)
