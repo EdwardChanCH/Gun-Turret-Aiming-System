@@ -117,7 +117,7 @@ mesh = SubResource("BoxMesh_f6a5g")
 [node name="Muzzle2" type="Node3D" parent="TurretPivot/BarrelPivot2" unique_id=1224407483]
 
 [node name="Target_YZ_blue" type="MeshInstance3D" parent="." unique_id=2076814834]
-transform = Transform3D(-3.7067185e-08, -0.84799826, 0.52999884, 1, -4.3711385e-08, 2.190879e-15, 2.3166987e-08, 0.52999884, 0.84799826, 0, 0, 0)
+transform = Transform3D(-3.7067185e-08, -0.84799826, 0.52999884, 1, -4.3711385e-08, 1.7172231e-15, 2.3166987e-08, 0.52999884, 0.84799826, 0, 0, 0)
 mesh = SubResource("PlaneMesh_s1udf")
 
 [node name="TargetNode" type="MeshInstance3D" parent="." unique_id=651664676 node_paths=PackedStringArray("target_node", "gun_turret", "targetYZ")]

@@ -80,7 +80,7 @@ func aim_reset() -> void:
 func aim_at(global_point: Vector3) -> void:
 	# --- Find new yaw angle --- #
 	var old_turret_basis: Basis = self.global_basis
-	var yaw_vector: Vector3 = (global_point - turret_joint.global_position).slide(old_turret_basis.y)
+	var yaw_vector: Vector3 = (global_point - turret_joint.global_position).slide(old_turret_basis.y) - (turret_joint.global_basis.x * barrel_joints[0].position.x)
 	var new_yaw_angle: float
 	
 	if (yaw_vector.is_zero_approx()):
