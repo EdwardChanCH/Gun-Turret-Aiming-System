@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://cw4she0rbnvod" path="res://assets/scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bwdn1xip0yve0" path="res://assets/scenes/gun_turret.tscn" id="1_o5qli"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpi06"]
 transparency = 1
 albedo_color = Color(0.5019608, 1, 1, 0.4)
 
-[sub_resource type="SphereMesh" id="SphereMesh_sugp2"]
-material = SubResource("StandardMaterial3D_0wfyh")
+[sub_resource type="SphereMesh" id="SphereMesh_dfgan"]
+material = SubResource("StandardMaterial3D_kpi06")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
 transparency = 1
@@ -26,16 +26,14 @@ target_node = NodePath("TargetNode")
 moving_node = NodePath("TestCube")
 gun_turrets = [NodePath("GunTurretOrigin"), NodePath("TestCube/GunTurretLeft"), NodePath("TestCube/GunTurretRight"), NodePath("TestCube/GunTurretFront"), NodePath("TestCube/GunTurretBack"), NodePath("TestCube/GunTurretTop"), NodePath("TestCube/GunTurretBottom")]
 
-[node name="TargetNode" type="Node3D" parent="." unique_id=2138617404]
+[node name="TargetNode" type="MeshInstance3D" parent="." unique_id=1540926184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 10, -50)
-
-[node name="DebugSphereMesh" type="MeshInstance3D" parent="TargetNode" unique_id=746651592]
-mesh = SubResource("SphereMesh_sugp2")
+mesh = SubResource("SphereMesh_dfgan")
 
 [node name="GunTurretOrigin" parent="." unique_id=1307237613 instance=ExtResource("1_o5qli")]
 
 [node name="TestCube" type="Node3D" parent="." unique_id=1209037035]
-transform = Transform3D(0.9653888, 0.23872408, 0.10504896, -0.26080284, 0.8796886, 0.3976554, 0.002519548, -0.41128913, 0.91150147, -11.227782, 0, 99.36768)
+transform = Transform3D(-0.3534846, -0.09373759, 0.9307319, 0.92565686, -0.17857458, 0.33357224, 0.1349368, 0.97945106, 0.14989221, 29.548485, 0, 95.534744)
 
 [node name="DebugCubeMesh" type="MeshInstance3D" parent="TestCube" unique_id=44118553]
 mesh = SubResource("BoxMesh_0wfyh")
